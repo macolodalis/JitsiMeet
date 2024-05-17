@@ -18,9 +18,9 @@ services:
     image: jitsi/prosody:prosody-0.12.4
     restart: always
     expose:
-      - '5222'
-      - '5347'
-      - '5280'
+      - '5222:5222'
+      - '5347:5347'
+      - '5280:5280'
     env_file:
       - ./settings.env
     networks:
