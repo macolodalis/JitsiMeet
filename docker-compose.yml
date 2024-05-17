@@ -12,7 +12,6 @@ services:
       - ./settings.env
     networks:
       meet.jitsi:
-        - web.meet.jitsi
 
   # XMPP server
   prosody:
