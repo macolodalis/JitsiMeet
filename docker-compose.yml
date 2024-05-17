@@ -6,7 +6,7 @@ services:
     image: jitsi/web:web-1.0.7997-1
     restart: always
     ports:
-      - '8000:80'
+      - '8397:80'
       - '8443:443'
     env_file:
       - ./settings.env
