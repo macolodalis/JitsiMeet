@@ -3,7 +3,7 @@ version: '3'
 services:
   # Frontend
   web:
-    image: jitsi/web
+    image: jitsi/web:web-1.0.7997-1
     restart: always
     ports:
       - '8000:80'
@@ -15,7 +15,7 @@ services:
 
   # XMPP server
   prosody:
-    image: jitsi/prosody
+    image: jitsi/prosody:prosody-0.12.4
     restart: always
     expose:
       - '5222'
@@ -30,7 +30,7 @@ services:
 
   # Focus component
   jicofo:
-    image: jitsi/jicofo
+    image: jitsi/jicofo:jicofo-1.0-1081-1
     restart: always
     env_file:
       - ./settings.env
@@ -41,7 +41,7 @@ services:
 
   # Video bridge
   jvb:
-    image: jitsi/jvb
+    image: jitsi/jvb:jvb-2.3-109-gacf024b7-1
     restart: always
     ports:
       - '10000:10000/udp'
