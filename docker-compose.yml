@@ -53,6 +53,20 @@ services:
     networks:
       meet.jitsi:
 
+  # TURN server
+  coturn:
+    image: instrumentisto/coturn
+    restart: always
+    ports:
+      - '3478:3478'
+      - '3478:3478/udp'
+      - '5349:5349'
+      - '5349:5349/tcp'
+    env_file:
+      - ./settings.env
+    networks:
+      meet.jitsi:
+
 # Custom network so all services can communicate using a FQDN
 networks:
     meet.jitsi:
