@@ -1,5 +1,6 @@
 ARG JITSI_REPO=jitsi
-FROM ${JITSI_REPO}/base
+FROM ${JITSI_REPO}/base:unstable-2024-05-25
+
 
 ADD https://dl.eff.org/certbot-auto /usr/local/bin/
 
