@@ -3,9 +3,7 @@ version: '3'
 services:
   # Frontend
   web:
-    build:
-      context: web
-      dockerfile: Dockerfile
+    image: jitsi/web:${JITSI_IMAGE_VERSION:-stable-9457-2}
     restart: always
     ports:
       - '8397:80'
@@ -17,9 +15,7 @@ services:
 
   # XMPP server
   prosody:
-    build:
-      context: prosody
-      dockerfile: Dockerfile
+    image: jitsi/prosody:${JITSI_IMAGE_VERSION:-stable-9457-2}
     restart: always
     ports:
       - '5222:5222'
@@ -34,9 +30,7 @@ services:
 
   # Focus component
   jicofo:
-    build:
-      context: jifoco
-      dockerfile: Dockerfile
+    image: jitsi/jicofo:${JITSI_IMAGE_VERSION:-stable-9457-2}
     restart: always
     env_file:
       - ./settings.env
@@ -47,9 +41,7 @@ services:
 
   # Video bridge
   jvb:
-    build:
-      context: jvb
-      dockerfile: Dockerfile
+    image: jitsi/jvb:${JITSI_IMAGE_VERSION:-stable-9457-2}
     restart: always
     ports:
       - '10000:10000/udp'
